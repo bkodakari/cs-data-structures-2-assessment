@@ -1,0 +1,48 @@
+Part 1: Discussion Questions
+
+Recursion:
+1)
+    Recursion is when a function calls on itself within itself. 
+2)
+    A base cased is needed to stop the recursion, much like for a while loop. 
+    If there is no specified stopping point, the recursion becomes a black hole until the max recursion depth is reached and the function errors out. 
+
+Graph:
+1)  
+    A graph is a grouping of nodes connected by pointers/edges/arcs. Graphs are used to depict relationships between nodes, and have the ability to loop back on itself. 
+2)
+    A graph does not need a single point as the root of the data, and all nodes can have multiple 'pointers' in and out. Said pointers are not necessarily directed, either, which means you are able to 'travel' back and forth between two nodes.
+3) 
+    Any transit system would work well with a graph, ie: flight paths, subway systems, cruises, etc.. 
+
+
+
+Performance of Different Data Structures:
+
+Data Structure                  Index   Search  Add-R   Add-L   Pop-L   Pop-R
+Python List (Array)             O(1)    O(n)    O(1)     O(n)    O(n)    O(1)
+Linked List                     O(n)    O(n)    O(1)**   O(1)    O(1)    O(n)
+Doubly-Linked List              O(n)    O(n)    O(1)**   O(1)    O(1)    O(1)**
+Queue (as Array)                  X       X     O(1)      X      O(n)     X
+Queue (as LL or DLL)              X       X     O(1)**    X      O(1)     X
+Stack (as Array, LL, or DLL)      X       X     O(1)**    X       X      O(1)** 
+Deque (as DLL)                    X       X     O(1)**   O(1)    O(1)    O(1)**
+
+** Constant as long as tail is specified for LL/DLL, otherwise: O(n)
+
+
+Data Structure           Get        Add         Delete      Iterate     Memory
+
+Dictionary (Hash Map)    O(1)       O(1)        O(1)        O(n)        medium
+Set (Hash Map)           O(1)       O(1)        O(1)        O(n)        medium
+Binary Search Tree       O(log(n))  O(log(n))   O(log(n))   O(n)        little
+Tree                     O(n)       O(1)        O(1)        O(n)        little
+
+
+Sorting:
+1)
+    A bubble sort goes through a list and compares each item to the next. If the first item is larger than the next item, it switches places with the item it was just compared with, and then it is compared with the next item in the list, so on and so forth. Once the end of the list is reached, the process starts over at the beginning of the list until you have gone over the list as many times as there are items in the list. There are optimizations that can be done such as: you can keep track of whether any switches/swaps have been made, and if no swaps were made in an iteration you can assume that the list is sorted.
+2)
+    A merge sort takes two already sorted lists and compares the first items from each list. The lower of the two gets added to a third list and the process continues until there are no more items in either of the initial lists. The initial lists are sorted by way of merge sort already being run on them (by way of recursion - the lists are broken down into lists of 1 item each, which, by definition, is sorted.).
+3)
+    The quick sort algorithm chooses a random pivot number and them compares each item on the list to the pivot item and sort them into two lists: higher and lower than the pivot item. Once all of the items are sorted into their respective lists, List A, the pivot item and List B are joined.
